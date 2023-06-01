@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UploadServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/UploadServer_jar</output-path>
+    <root id="archive" name="UploadServer.jar">
+      <element id="module-output" name="UploadServer" />
+    </root>
+  </artifact>
+</component>
