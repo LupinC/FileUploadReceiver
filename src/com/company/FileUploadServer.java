@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class FileUploadServer extends JFrame {
-    private static final int SERVER_PORT = 443;
+    private static final int SERVER_PORT = 9999;
 
     private JTextArea textArea;
 
@@ -46,7 +46,6 @@ public class FileUploadServer extends JFrame {
                     totalBytesRead += bytesRead;
                 }
 
-
                 fos.close();
                 dis.close();
                 socket.close();
@@ -54,9 +53,6 @@ public class FileUploadServer extends JFrame {
                 textArea.append("File " + fileName + " received, size: " + fileLength + "\n");
                 Socket clientSocket = serverSocket.accept();
                 textArea.append("New client connected: " + clientSocket.getInetAddress()+ "\n");
-
-
-
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,10 +63,8 @@ public class FileUploadServer extends JFrame {
         SwingUtilities.invokeLater(() -> {
             FileUploadServer server = new FileUploadServer();
             server.setVisible(true);
-
             // Start the server in a new thread
             new Thread(server::startServer).start();
         });
     }
-
 }
